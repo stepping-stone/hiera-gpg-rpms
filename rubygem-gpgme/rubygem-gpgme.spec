@@ -16,9 +16,6 @@ BuildRequires: libassuan-devel
 BuildRequires: libgpg-error-devel
 Requires: rubygem-mini_portile2
 
-ExclusiveArch:  x86_64
-BuildArch:      x86_64
-
 %description
 %{summary}.
 
