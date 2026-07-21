@@ -8,9 +8,15 @@ License:        MIT
 URL:            https://rubygems.org/gems/gpgme
 Source:         https://rubygems.org/downloads/%{gem_name}-%{version}.gem
 
-BuildRequires:  rubygems-devel
+BuildRequires: gcc
+BuildRequires: rubygems-devel
+BuildRequires: ruby-devel
+BuildRequires: gpgme-devel
+BuildRequires: libassuan-devel
+BuildRequires: libgpg-error-devel
 Requires: rubygem-mini_portile2
 
+ExclusiveArch:  x86_64
 BuildArch:      x86_64
 
 %description
