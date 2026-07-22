@@ -1,7 +1,7 @@
 %global gem_name gpgme
 
 Name:           rubygem-%{gem_name}
-Version:        2.0.24
+Version:        2.0.26
 Release:        1%{?dist}
 Summary:        Ruby binding of GPGME.
 License:        MIT
