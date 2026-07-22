@@ -10,6 +10,7 @@ URL:            https://rubygems.org/gems/optimist
 Source:         https://rubygems.org/downloads/%{gem_name}-%{version}.gem
 
 BuildRequires:  rubygems-devel
+Requires: rubygem-optimist
 
 BuildArch:      noarch
 
