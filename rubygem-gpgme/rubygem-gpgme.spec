@@ -72,5 +72,5 @@ rm -v %{buildroot}%{gem_cache}
 %doc %{gem_docdir}
 
 %changelog
-* Tue Jul 21 2026 Luca Albrecht <luca@albright.one> - 2.0.24-1
+* Tue Jul 21 2026 Luca Albrecht <luca@albright.one> - 2.0.26-1
 - Initial package

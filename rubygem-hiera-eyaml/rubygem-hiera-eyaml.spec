@@ -63,5 +63,5 @@ rm -v %{buildroot}%{gem_cache}
 %{gem_instdir}/{Gemfile,Rakefile,%{gem_name}.gemspec}
 
 %changelog
-* Tue Jul 21 2026 Luca Albrecht <luca@albright.one> - 3.2.0-1
+* Tue Jul 21 2026 Luca Albrecht <luca@albright.one> - 4.3.0-1
 - Initial package
