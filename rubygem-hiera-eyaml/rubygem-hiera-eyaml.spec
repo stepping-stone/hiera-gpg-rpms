@@ -1,12 +1,12 @@
 %global gem_name hiera-eyaml
 
 Name:           rubygem-%{gem_name}
-Version:        4.3.0
-Release:        2%{?dist}
+Version:        5.0.1
+Release:        1%{?dist}
 Summary:        Hiera backend for decrypting encrypted yaml properties
 
 License:        MIT
-URL:            https://rubygems.org/gems/optimist
+URL:            https://rubygems.org/gems/hiera-eyaml
 Source:         https://rubygems.org/downloads/%{gem_name}-%{version}.gem
 
 BuildRequires:  rubygems-devel
@@ -41,16 +41,6 @@ cp -a ./%{gem_dir}/* %{buildroot}%{gem_dir}/
 mkdir -p %{buildroot}%{_bindir}
 cp -a ./%{_bindir}/* %{buildroot}%{_bindir}
 
-# Fix binstub for Ruby 4.0 / RubyGems 4.0 compatibility (activate_bin_path
-# triggers a broken Molinillo resolver path in RubyGems 4.0.18)
-# Fix binstub for Ruby 4.0 / RubyGems 4.0 compatibility
-sed -i \
-    -e '/Gem.use_gemdeps/d' \
-    -e '/if Gem.respond_to/,/^end/d' \
-    %{buildroot}%{_bindir}/eyaml
-echo 'gem "hiera-eyaml", ">= 4.3.0"' >> %{buildroot}%{_bindir}/eyaml
-echo 'load Gem.bin_path("hiera-eyaml", "eyaml", ">= 4.3.0")' >> %{buildroot}%{_bindir}/eyaml
-
 rm -vrf %{buildroot}%{gem_instdir}/.github \
     %{buildroot}%{gem_instdir}/.rubocop.yml \
     %{buildroot}%{gem_instdir}/.rubocop_todo.yml \
@@ -73,6 +63,8 @@ rm -vf %{buildroot}%{gem_cache}
 %{gem_instdir}/{Gemfile,Rakefile,%{gem_name}.gemspec}
 
 %changelog
+* Mon Aug 17 2026 Luca Albrecht <luca@albright.one> - 5.0.1-1
+- Bump to version 5.0.1 
 * Mon Aug 17 2026 Luca Albrecht <luca@albright.one> - 4.3.0-2
 - Patch binstub to work around RubyGems 4.0.18 / Ruby 4.0 resolver bug
   (Gem.use_gemdeps triggers broken Molinillo resolution; replaced with
